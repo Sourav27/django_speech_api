@@ -1,7 +1,11 @@
+# Database
+db.sqlite3
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
 
 # C extensions
 *.so
@@ -87,3 +91,5 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+config/api_keys.py
