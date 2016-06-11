@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from django_api.speech.serializers import CreateUserSerializer, SpeechInputSerializer
+from nlp import findSVOs
 
 class UserViewSet(viewsets.ModelViewSet):
 	"""
@@ -48,7 +49,7 @@ class SpeechView(views.APIView):
 		data = serializer.validated_data
 		transcript = data["transcript"]
 		# Perform calculations
-		result = "Hola!"
+		result = findSVOs(transcript)
 		# Return result in custom format
 		return Response({
 				"input": transcript,
